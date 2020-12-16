@@ -20,7 +20,6 @@ if (isset($_POST['submit'])) {
 
 	$mail->setFrom($_POST['email'], $_POST['name']);
 	$mail->addAddress('sanchitgupta0144@gmail.com');     // Add a recipient
-	// $mail->addAddress('rishabh469mehta@gmail.com');
 	$mail->addReplyTo($_POST['email'], $_POST['name']);
 	$mail->isHTML(true);                                  // Set email format to HTML
 	$mail->Subject = 'Message from: ' . $_POST['name'];
