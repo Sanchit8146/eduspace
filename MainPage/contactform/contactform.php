@@ -13,13 +13,18 @@ if (isset($_POST['submit'])) {
 	$mail->isSMTP();                                      // Set mailer to use SMTP
 	$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'eduspacecontact@gmail.com';                 // SMTP username
-	$mail->Password = 'eduspaceteam';                           // SMTP password
+	$mail->Username = '';                 // SMTP username
+	$mail->Password = '';                           // SMTP password
+	// username and password removed for the security reasons
+	//but you can use your gmail id and password
+	// you just need to turn on less secure apps (https://myaccount.google.com/lesssecureapps)
+	//and enable display unlock captcha (https://accounts.google.com/b/0/DisplayUnlockCaptcha)
+	// after that yoy are good to go
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 587;                                    // TCP port to connect to
 
 	$mail->setFrom($_POST['email'], $_POST['name']);
-	$mail->addAddress('sanchitgupta0144@gmail.com');     // Add a recipient
+	$mail->addAddress('');     // Add a recipient i.e. on which email address you want to receive the mail
 	$mail->addReplyTo($_POST['email'], $_POST['name']);
 	$mail->isHTML(true);                                  // Set email format to HTML
 	$mail->Subject = 'Message from: ' . $_POST['name'];
