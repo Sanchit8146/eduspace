@@ -21,7 +21,6 @@
         <!-- Nav -->
         <nav id="nav">
             <a href="#" class="icon solid fa-user"><span>Developer 1</span></a>
-            <!-- <a href="#rishabh" class="icon solid fa-user"><span>Developer 2</span></a> -->
         </nav>
 
         <!-- Main -->
@@ -39,26 +38,7 @@
                 <a class="jumplink pic">
                     <img src="images/sanchit.jpg" alt="sanchit" />
                 </a>
-                <!-- <a href="#rishabh" class="jumplink pic">
-                    <span class="arrow icon solid fa-chevron-right"><span>See my other teammates</span></span>
-                    <img src="images/sanchit.jpg" alt="sanchit" />
-                </a> -->
             </article>
-
-            <!-- rishabh -->
-            <!-- <article id="rishabh" class="panel intro">
-                <header>
-                    <h1>Rishabh Mehta</h1>
-                    <p style="font-weight: 700;">Front-end and Back-end Application Design</p>
-                    <p style="text-align:justify">I am a student majoring in Computer Science at DAVIET.
-                        I developed the front-end as well as helped in making the back-end of this application.
-                    </p>
-                </header>
-                <a href="#" class="jumplink pic">
-                    <span class="arrow icon solid fa-chevron-right"><span>See my other teammates</span></span>
-                    <img src="images/rishabh.jpg" alt="rishabh" />
-                </a>
-            </article> -->
         </div>
 
         <!-- Footer -->
