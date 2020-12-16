@@ -1,0 +1,27 @@
+.content-table-cell h1 {
+	color: #8043ff;
+}
+.content-table-cell h1 .error:after {
+	background-color: #8043ff;
+}
+.content-table-cell h3 {
+	color: #8043ff;
+}
+.content-table-cell form {
+	border: 1px solid #8043ff;
+}
+.content-table-cell form button {
+	background-color: #8043ff;
+}
+
+.content-table-cell h1 .animation-text {
+	/* Clip Background Image */
+	background: url(../../img/text-animation/purple.png) repeat-y;
+	-webkit-background-clip: text;
+	/* Animate Background Image */
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: aitf 80s linear infinite;
+	/* Activate hardware acceleration for smoother animations */
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+}
