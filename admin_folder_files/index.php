@@ -158,6 +158,11 @@ require_once("connect.php");
                                     <span class="title">Add Images</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-toggle" href="showmessages.php"><i class="fas fa-envelope"></i>
+                                    <span class="title">Messages</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
