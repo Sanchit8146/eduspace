@@ -299,16 +299,6 @@ require_once("connect.php");
     <!-- Material -->
     <script src="../getstarted/ProfSide/assets/plugins/material/material.min.js"></script>
     <script src="https://kit.fontawesome.com/f004f1adc5.js" crossorigin="anonymous"></script>
-    <script>
-    function confbox(sid) {
-        var r = confirm("Press Ok to delete the session!!!!");
-        if (r == true) {
-            location.href = "deletesession.php?id=" + sid + "";
-        } else {
-            location.href = "showsession.php";
-        }
-    }
-    </script>
 </body>
 
 </html>
