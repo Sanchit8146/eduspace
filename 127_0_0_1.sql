@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 16, 2020 at 09:28 PM
+-- Generation Time: Dec 18, 2020 at 02:15 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -148,6 +148,31 @@ INSERT INTO `gallery` (`id`, `snap`) VALUES
 (1, '1.jpeg'),
 (2, '2.jpeg'),
 (3, '3.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE IF NOT EXISTS `message` (
+  `m_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `senddate` text NOT NULL,
+  `sendtime` text NOT NULL,
+  PRIMARY KEY (`m_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`m_id`, `name`, `email`, `message`, `senddate`, `sendtime`) VALUES
+(4, 'Sanchit Gupta', 'sanchit@gmail.com', 'Hello there, How are you? Hope you are doing great. We all loved your work!!!', '18/Dec/2020 Fri', '07:11 PM'),
+(5, 'eduSpace', 'rishabh@gmail.com', 'Hello there, How are you? Hope you are doing great. We all loved your work!!!vbsivbijwnvijwfnij@Knkjvksjvkj@nkjewvnkjs', '18/Dec/2020 Fri', '07:12 PM');
 
 -- --------------------------------------------------------
 
