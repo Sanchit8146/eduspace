@@ -1,11 +1,16 @@
 <?php
-// $result = "";
+require_once("../../getstarted/connect.php");
 date_default_timezone_set('Asia/Calcutta');
 if (isset($_POST['submit'])) {
-
 	require 'phpmailer/PHPMailerAutoload.php';
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$message = $_POST['message'];
+	$date = date("d/M/Y D");
+	$time = date("h:i A");
 
-
+	$query = mysqli_query($db, "insert into message(name,email,message,senddate,sendtime) values('$name','$email','$message','$date','$time')");
+	// if ($query) {
 	$mail = new PHPMailer;
 
 	// $mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -19,15 +24,16 @@ if (isset($_POST['submit'])) {
 	//but you can use your gmail id and password
 	// you just need to turn on less secure apps (https://myaccount.google.com/lesssecureapps)
 	//and enable display unlock captcha (https://accounts.google.com/b/0/DisplayUnlockCaptcha)
-	// after that yoy are good to go
+	// after that you are good to go
 	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	$mail->Port = 587;                                    // TCP port to connect to
 
-	$mail->setFrom($_POST['email'], $_POST['name']);
-	$mail->addAddress('');     // Add a recipient i.e. on which email address you want to receive the mail
-	$mail->addReplyTo($_POST['email'], $_POST['name']);
+	$mail->setFrom($email, $name);
+	$mail->addAddress('sanchitgupta0144@gmail.com');     // Add a recipient
+	// $mail->addAddress('rishabh469mehta@gmail.com');
+	$mail->addReplyTo($email, $name);
 	$mail->isHTML(true);                                  // Set email format to HTML
-	$mail->Subject = 'Message from: ' . $_POST['name'];
+	$mail->Subject = 'Message from: ' . $name;
 	$mail->Body = "
     <table width='100%' style='background-image: linear-gradient(to left, #83358a, #9e349b, #bb30ab, #d927b8, #f90dc4);'
 		border='0' cellpadding='0' cellspacing='0'>
@@ -90,7 +96,7 @@ if (isset($_POST['submit'])) {
 									<td style='font-size: 16px;
 			line-height: 22px;color: #153643;
 			font-family: sans-serif;'>
-										" . $_POST['message'] . "
+										 $message
 									</td>
 								</tr>
 							</table>
@@ -104,9 +110,10 @@ if (isset($_POST['submit'])) {
 									<td style='text-align:right;font-size: 16px;
 			line-height: 22px;color: #153643;
 			font-family: sans-serif;'>
-										<b>From: </b>" . $_POST['name'] . "<br>
-										<b>Email: </b>" . $_POST['email'] . "<br>
-										<b>Date: </b>" . date("d/M/Y D") . "
+										<b>From: </b> $name<br>
+										<b>Email: </b> $email<br>
+										<b>Date: </b> $date<br> 
+										<b>Time: </b> $time<br> 
 									</td>
 								</tr>
 							</table>
@@ -130,7 +137,7 @@ if (isset($_POST['submit'])) {
 	</table>
     
 	";
-	$mail->AltBody = 'Name: ' . $_POST['name'] . '\r\nEmail: ' . $_POST['email'] . '\r\nMessage: ' . $_POST['message'];
+	$mail->AltBody = 'Name: ' . $name . '\r\nEmail: ' . $email . '\r\nMessage: ' . $message;
 	// $mail->Body    = '<h1 style="align:center;">Name: ' . $_POST['name'] . '<br>Email: ' . $_POST['email'] . '<br>Message: ' . $_POST['message'] . '</h1>';
 }
 if (!$mail->send()) {
@@ -138,3 +145,6 @@ if (!$mail->send()) {
 } else {
 	echo '<script>document.location.href = "contact1.php?code=success";</script>';
 }
+// } else {
+// 	echo '<script>document.location.href = "contact1.php?code=error"</script>';
+// }
